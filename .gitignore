@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets / credentials
+.env
+.env.*
+kaggle.json
+
+# Raw data (download locally, never commit)
+data/raw/*
+!data/raw/.gitkeep
+
+# Submission bundle
+*.zip
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
