@@ -54,6 +54,22 @@ Overall: $2.30M in sales, $286K profit (12.5% margin), and 18.7% of order lines 
    This should create `data/raw/Sample - Superstore.csv`.
 3. Run the analysis from the repo root: `python src/analysis.py`
    It prints the key numbers, saves the charts to `reports/figures/`, and writes the top 10 rows to `reports/top10_rows.csv` (for the slides).
+4. Optional: rebuild the report and slides.
+   ```bash
+   pip install python-docx python-pptx
+   python scripts/build_report.py    # -> reports/report.docx
+   python scripts/build_slides.py    # -> reports/presentation.pptx
+   ```
+
+## Submission
+
+The deliverables are `reports/report.docx` (written report) and `reports/presentation.pptx` (11 slides). To build the Canvas ZIP from the repo root:
+
+```bash
+python scripts/build_zip.py   # -> ITDS1471_FinalProject_JohnPierre.zip (git-ignored)
+```
+
+The ZIP keeps the folder structure, so `python src/analysis.py` runs right after unzipping.
 
 ## Project Layout
 
@@ -64,5 +80,6 @@ notebooks/       exploratory Jupyter notebooks
 src/             final analysis script (.py — submitted)
 reports/         report (.docx) and slides (.pptx)
 reports/figures/ exported chart images
+scripts/         build scripts for the report, slides, and submission ZIP
 docs/            planning notes (dataset options, etc.)
 ```
