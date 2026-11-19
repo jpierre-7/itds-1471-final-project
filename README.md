@@ -19,15 +19,29 @@ As a junior data analyst, I take a real-world dataset from a free public source 
 
 ## Questions
 
-_TBD_
+1. How did sales and profit trend from 2014 to 2017, and is there a seasonal pattern?
+2. Which categories and sub-categories make money, and which lose it?
+3. Do bigger discounts lead to lower profit?
 
 ## Methods
 
-_TBD_
+- Load the CSV with Pandas (`encoding="latin-1"`). Check the shape, missing values, and duplicates.
+- Parse order and ship dates into datetimes, then add `Year` and `Ship Days` columns.
+- Group and aggregate (`groupby`, `resample`, `pivot_table`) by month, year, category, sub-category, region, and discount level.
+- Make 6 charts with Matplotlib and Seaborn (line, pie, bar, grouped bar), each with a title, axis labels, and a legend where needed.
 
 ## Results
 
-_TBD_
+| Chart | Finding |
+|---|---|
+| `01_monthly_sales_profit.png` | Sales grew 51% from 2014 ($484K) to 2017 ($733K). Every year peaks in Sep–Dec and dips in Jan–Feb. |
+| `02_sales_share_by_category.png` | Sales are split fairly evenly: Technology 36%, Furniture 32%, Office Supplies 31%. |
+| `03_profit_by_subcategory.png` | Tables (-$17.7K), Bookcases (-$3.5K), and Supplies (-$1.2K) lose money. Copiers, Phones, and Accessories earn the most. |
+| `04_sales_profit_by_region.png` | West leads in sales and margin (14.9%). Central has the weakest margin (7.9%). |
+| `05_profit_by_discount.png` | Average profit per order line turns negative at discounts of 30% and above. |
+| `06_yearly_sales_by_category.png` | All three categories grew in 2016–2017. Furniture sells well but earns only a 2.5% margin. |
+
+Overall: $2.30M in sales, $286K profit (12.5% margin), and 18.7% of order lines lose money.
 
 ## How to Run
 
@@ -38,7 +52,8 @@ _TBD_
    unzip superstore.zip -d data/raw/
    ```
    This should create `data/raw/Sample - Superstore.csv`.
-3. Analysis script: _TBD_
+3. Run the analysis from the repo root: `python src/analysis.py`
+   It prints the key numbers, saves the charts to `reports/figures/`, and writes the top 10 rows to `reports/top10_rows.csv` (for the slides).
 
 ## Project Layout
 
