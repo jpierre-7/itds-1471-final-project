@@ -7,7 +7,15 @@ As a junior data analyst, I take a real-world dataset from a free public source 
 
 ## Dataset
 
-_TBD — see [`docs/dataset-options.md`](docs/dataset-options.md) for the shortlist._
+**Superstore Sales** by Vivek Chowdhury on Kaggle: <https://www.kaggle.com/datasets/vivek468/superstore-dataset-final>
+(chosen from the shortlist in [`docs/dataset-options.md`](docs/dataset-options.md))
+
+- File: `Sample - Superstore.csv`, 2.3 MB, **9,994 rows × 21 columns**
+- One row per order line: US retail orders from 2014-01-03 to 2017-12-30
+- Columns: order/ship dates, ship mode, customer segment, location (city, state, region), product category/sub-category, Sales, Quantity, Discount, Profit
+- No missing values, no duplicate rows
+- Encoding is **latin-1**, not UTF-8: use `pd.read_csv(..., encoding="latin-1")`
+- License: "Other". Originally Tableau sample data; used here for coursework
 
 ## Questions
 
@@ -23,7 +31,14 @@ _TBD_
 
 ## How to Run
 
-_TBD_
+1. Install dependencies: `pip install -r requirements.txt`
+2. Download the dataset ZIP and unzip it into `data/raw/`:
+   ```bash
+   curl -L -o superstore.zip https://www.kaggle.com/api/v1/datasets/download/vivek468/superstore-dataset-final
+   unzip superstore.zip -d data/raw/
+   ```
+   This should create `data/raw/Sample - Superstore.csv`.
+3. Analysis script: _TBD_
 
 ## Project Layout
 
